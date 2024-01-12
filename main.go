@@ -8,9 +8,17 @@ var board [3][3]string
 var currentPlayer string
 
 func main() {
-	initializeBoard(3, 3)
+	initializeBoard()
 	currentPlayer = "X"
 	winner := ""
+
+	/*
+		board := [][]string{
+			{"X", "O", "X"},
+			{" ", "X", "O"},
+			{"O", " ", "X"},
+		}
+	*/
 
 	for winner == "" {
 		displayBoard()
@@ -35,7 +43,6 @@ func main() {
 	}
 }
 
-/*
 func initializeBoard() {
 	for i := 0; i < 3; i++ {
 		for j := 0; j < 3; j++ {
@@ -43,19 +50,19 @@ func initializeBoard() {
 		}
 	}
 }
-*/
 
-func initializeBoard(rows, cols int) [][]string {
-	board := make([][]string, rows)
-	for i := 0; i < rows; i++ {
-		board[i] = make([]string, cols)
-		for j := 0; j < cols; j++ {
-			board[i][j] = " "
+/*
+	func initializeBoard(rows, cols int) [][]string {
+		board := make([][]string, rows)
+		for i := 0; i < rows; i++ {
+			board[i] = make([]string, cols)
+			for j := 0; j < cols; j++ {
+				board[i][j] = " "
+			}
 		}
+		return board
 	}
-	return board
-}
-
+*/
 func displayBoard() {
 	fmt.Println("  0 1 2")
 	for i := 0; i < 3; i++ {
