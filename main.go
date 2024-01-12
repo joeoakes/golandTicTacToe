@@ -8,7 +8,7 @@ var board [3][3]string
 var currentPlayer string
 
 func main() {
-	initializeBoard()
+	initializeBoard(3, 3)
 	currentPlayer = "X"
 	winner := ""
 
@@ -35,12 +35,25 @@ func main() {
 	}
 }
 
+/*
 func initializeBoard() {
 	for i := 0; i < 3; i++ {
 		for j := 0; j < 3; j++ {
 			board[i][j] = " "
 		}
 	}
+}
+*/
+
+func initializeBoard(rows, cols int) [][]string {
+	board := make([][]string, rows)
+	for i := 0; i < rows; i++ {
+		board[i] = make([]string, cols)
+		for j := 0; j < cols; j++ {
+			board[i][j] = " "
+		}
+	}
+	return board
 }
 
 func displayBoard() {
